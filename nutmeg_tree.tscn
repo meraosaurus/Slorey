@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb8pm8xqmu5wr"]
+
+[ext_resource type="Script" path="res://nutmeg_tree.gd" id="1_x1c2v"]
+[ext_resource type="Texture2D" uid="uid://bpal1p3lv0gsn" path="res://Assets/tree assets/nutmeg_tree.PNG" id="2_sc1h7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhjgo"]
+atlas = ExtResource("2_sc1h7")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac8rr"]
+atlas = ExtResource("2_sc1h7")
+region = Rect2(480, 0, 240, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqvbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhjgo")
+}],
+"loop": true,
+"name": &"meg",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac8rr")
+}],
+"loop": true,
+"name": &"no meg",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ib4t"]
+radius = 176.003
+
+[node name="nutmeg_tree" type="Node2D"]
+script = ExtResource("1_x1c2v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gqvbx")
+animation = &"meg"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7ib4t")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

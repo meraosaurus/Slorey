@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5qo5rdpnogiw"]
+
+[ext_resource type="Script" path="res://guava_tree.gd" id="1_e2rof"]
+[ext_resource type="Texture2D" uid="uid://cetnbuaq80vs1" path="res://Assets/tree assets/guava_tree.PNG" id="2_mjud0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6t4l"]
+atlas = ExtResource("2_mjud0")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7c85"]
+atlas = ExtResource("2_mjud0")
+region = Rect2(480, 0, 240, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e7sd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6t4l")
+}],
+"loop": true,
+"name": &"guava",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7c85")
+}],
+"loop": true,
+"name": &"no guava",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uwyk3"]
+radius = 176.026
+
+[node name="guava_tree" type="Node2D"]
+script = ExtResource("1_e2rof")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8e7sd")
+animation = &"guava"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uwyk3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

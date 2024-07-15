@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhvvp2nddrqjx"]
+
+[ext_resource type="Script" path="res://tree scripts/mango tree.gd" id="1_suib6"]
+[ext_resource type="Texture2D" uid="uid://1s83cru1gjmq" path="res://Assets/tree assets/mango tree updatee.PNG" id="2_4k4db"]
+[ext_resource type="Texture2D" uid="uid://dthdjju43ec8m" path="res://Assets/tree assets/mango tree final?.PNG" id="2_l1v6j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5rai"]
+atlas = ExtResource("2_4k4db")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vodb6"]
+atlas = ExtResource("2_l1v6j")
+region = Rect2(480, 0, 240, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1tvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5rai")
+}],
+"loop": true,
+"name": &"mango",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vodb6")
+}],
+"loop": true,
+"name": &"no mango",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq4sa"]
+radius = 143.014
+
+[node name="mango tree" type="Node2D"]
+script = ExtResource("1_suib6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 12)
+sprite_frames = SubResource("SpriteFrames_s1tvb")
+animation = &"mango"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 8)
+shape = SubResource("CircleShape2D_eq4sa")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(16, 6)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
