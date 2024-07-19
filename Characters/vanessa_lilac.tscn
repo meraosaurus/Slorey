@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://csh3omiqlvex"]
+[gd_scene load_steps=44 format=3 uid="uid://csh3omiqlvex"]
 
 [ext_resource type="Script" path="res://Levels/Level_1/vanessa lilac trial.gd" id="1_pgkfr"]
 [ext_resource type="Texture2D" uid="uid://cutvb4l8x3oi7" path="res://Characters/Download47745.png" id="2_afxre"]
+[ext_resource type="PackedScene" uid="uid://d0unm051l8nvk" path="res://inventory/inventory_ui.tscn" id="3_4a3er"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_00oix"]
 atlas = ExtResource("2_afxre")
@@ -319,3 +320,9 @@ limit_left = -1131
 limit_top = -713
 limit_right = 2193
 limit_bottom = 3071
+
+[node name="inventory ui" parent="." instance=ExtResource("3_4a3er")]
+offset_left = -510.0
+offset_top = -382.0
+offset_right = 443.0
+offset_bottom = 263.0

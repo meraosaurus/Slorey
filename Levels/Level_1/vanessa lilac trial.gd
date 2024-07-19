@@ -3,6 +3,8 @@ var speed= 100
 
 var player_state
 
+@export var inv:Inv
+
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "top", "down")
 	
