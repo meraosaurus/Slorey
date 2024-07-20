@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvtItem" load_steps=3 format=3 uid="uid://dn8kgcpswhboi"]
 
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_1rxbt"]
-[ext_resource type="Texture2D" uid="uid://dy6xai82sc6xj" path="res://Assets/tree assets/fruit_mango.PNG" id="2_vl72j"]
+[ext_resource type="Texture2D" uid="uid://2acblaahx4aj" path="res://inventory/inventory art/mango inventory.PNG" id="2_1pkqp"]
 
 [resource]
 script = ExtResource("1_1rxbt")
 name = "mango"
-texture = ExtResource("2_vl72j")
+texture = ExtResource("2_1pkqp")

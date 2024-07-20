@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhvvp2nddrqjx"]
+[gd_scene load_steps=9 format=3 uid="uid://dhvvp2nddrqjx"]
 
 [ext_resource type="Script" path="res://tree scripts/mango tree.gd" id="1_suib6"]
+[ext_resource type="Resource" uid="uid://dn8kgcpswhboi" path="res://inventory/items/mango.tres" id="2_0lqdp"]
 [ext_resource type="Texture2D" uid="uid://1s83cru1gjmq" path="res://Assets/tree assets/mango tree updatee.PNG" id="2_4k4db"]
 [ext_resource type="Texture2D" uid="uid://dthdjju43ec8m" path="res://Assets/tree assets/mango tree final?.PNG" id="2_l1v6j"]
 
@@ -36,6 +37,7 @@ radius = 143.014
 
 [node name="mango tree" type="Node2D"]
 script = ExtResource("1_suib6")
+item = ExtResource("2_0lqdp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 12)

@@ -3,6 +3,8 @@ var state = "no mango"
 var player_in_area= false 
 
 var mango= preload("res://tree scripts/mango_collectable.tscn")
+@export var item: InvtItem
+var player= null
 
 func _ready():
 	if state == "no mango":
@@ -22,6 +24,7 @@ func _process(_delta):
 func _on_area_2d_body_entered(body):
 	if body.has_method("player"):
 		player_in_area=true
+		player = body
 
 
 func _on_area_2d_body_exited(body):
@@ -37,6 +40,6 @@ func drop_fruit():
 	var mango_instance= mango.instantiate()
 	mango_instance.global_position=$Marker2D.global_position
 	get_parent().add_child(mango_instance)
-	
+	player.collect(item)
 	await get_tree().create_timer(3).timeout
 	$Timer.start()

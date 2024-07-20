@@ -1,27 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0unm051l8nvk"]
 
 [ext_resource type="Script" path="res://inventory/inventory ui.gd" id="1_ovyiw"]
-[ext_resource type="Texture2D" uid="uid://biltetoorqhri" path="res://inventory/inventory art/bag pop up.PNG" id="2_qf5cd"]
+[ext_resource type="Texture2D" uid="uid://frkgn001kwrp" path="res://inventory/inventory art/invent.PNG" id="2_awijt"]
 [ext_resource type="PackedScene" uid="uid://djlmw5n1t58j6" path="res://inventory/inventory_ui_slot.tscn" id="3_vr1qi"]
 
 [node name="inventory ui" type="Control"]
-custom_minimum_size = Vector2(953, 2.08165e-12)
+custom_minimum_size = Vector2(888, 595)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 953.0
-offset_bottom = 659.0
+offset_left = 1.0
+offset_right = 903.0
+offset_bottom = 595.0
 script = ExtResource("1_ovyiw")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_top = -8.0
-offset_right = 1013.0
-offset_bottom = 747.0
-texture = ExtResource("2_qf5cd")
-patch_margin_left = 12
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+offset_left = 11.0
+offset_top = -11.0
+offset_right = 899.0
+offset_bottom = 654.0
+texture = ExtResource("2_awijt")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 z_as_relative = false
@@ -31,10 +33,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.5
-offset_top = -51.5
-offset_right = 110.5
-offset_bottom = 136.5
+offset_left = -59.0
+offset_top = -33.5
+offset_right = 130.0
+offset_bottom = 154.5
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3

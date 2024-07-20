@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvtItem" load_steps=3 format=3 uid="uid://u0xcr15oo76g"]
 
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_7cm5n"]
-[ext_resource type="Texture2D" uid="uid://yfw3lau8eo00" path="res://Assets/tree assets/fruit_guava.PNG" id="2_3hckm"]
+[ext_resource type="Texture2D" uid="uid://cx8qk8tbsdmvf" path="res://inventory/inventory art/guava inventory.PNG" id="2_p7va6"]
 
 [resource]
 script = ExtResource("1_7cm5n")
 name = "guava"
-texture = ExtResource("2_3hckm")
+texture = ExtResource("2_p7va6")

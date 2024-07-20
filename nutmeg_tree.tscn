@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb8pm8xqmu5wr"]
+[gd_scene load_steps=8 format=3 uid="uid://bb8pm8xqmu5wr"]
 
 [ext_resource type="Script" path="res://nutmeg_tree.gd" id="1_x1c2v"]
+[ext_resource type="Resource" uid="uid://bvhfq245ogod0" path="res://inventory/items/nutmeg.tres" id="2_7op0a"]
 [ext_resource type="Texture2D" uid="uid://bpal1p3lv0gsn" path="res://Assets/tree assets/nutmeg_tree.PNG" id="2_sc1h7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhjgo"]
@@ -35,6 +36,7 @@ radius = 176.003
 
 [node name="nutmeg_tree" type="Node2D"]
 script = ExtResource("1_x1c2v")
+item = ExtResource("2_7op0a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gqvbx")
