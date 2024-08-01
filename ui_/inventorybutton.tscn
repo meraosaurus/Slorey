@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://gn04uyvtb717"]
+
+[ext_resource type="Script" path="res://ui_/inventorybutton.gd" id="1_bgtcg"]
+[ext_resource type="Texture2D" uid="uid://dpi6kuw6ijad" path="res://Slorey ౨ৎ assets/UI/home screen ui/bag icon.PNG" id="2_2e6oh"]
+
+[node name="bag_button" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1814.0
+offset_bottom = 1269.0
+script = ExtResource("1_bgtcg")
+
+[node name="inventorybutton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 1274.0
+offset_right = 3779.0
+offset_bottom = 3832.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("2_2e6oh")
+switch_on_hover = true
+
+[connection signal="pressed" from="inventorybutton" to="." method="_on_inventorybutton_pressed"]

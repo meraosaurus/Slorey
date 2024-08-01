@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ok0wo1kdqxui"
+path="res://.godot/imported/time_for_adventure.mp3-c274643acc6281581d3978268328362c.mp3str"
+
+[deps]
+
+source_file="res://Slorey ౨ৎ assets/music/time_for_adventure.mp3"
+dest_files=["res://.godot/imported/time_for_adventure.mp3-c274643acc6281581d3978268328362c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

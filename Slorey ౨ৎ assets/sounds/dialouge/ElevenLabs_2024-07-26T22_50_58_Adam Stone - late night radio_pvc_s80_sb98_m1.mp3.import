@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c84g1wmysqv63"
+path="res://.godot/imported/ElevenLabs_2024-07-26T22_50_58_Adam Stone - late night radio_pvc_s80_sb98_m1.mp3-550caf6b52dcbe0208b37f70dc319792.mp3str"
+
+[deps]
+
+source_file="res://Slorey ౨ৎ assets/sounds/dialouge/ElevenLabs_2024-07-26T22_50_58_Adam Stone - late night radio_pvc_s80_sb98_m1.mp3"
+dest_files=["res://.godot/imported/ElevenLabs_2024-07-26T22_50_58_Adam Stone - late night radio_pvc_s80_sb98_m1.mp3-550caf6b52dcbe0208b37f70dc319792.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

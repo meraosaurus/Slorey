@@ -1,7 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://csh3omiqlvex"]
+[gd_scene load_steps=44 format=3 uid="uid://csh3omiqlvex"]
 
 [ext_resource type="Script" path="res://Levels/Level_1/vanessa lilac trial.gd" id="1_pgkfr"]
 [ext_resource type="Texture2D" uid="uid://cutvb4l8x3oi7" path="res://Characters/Download47745.png" id="2_afxre"]
+[ext_resource type="Texture2D" uid="uid://cnmiy1de2lt33" path="res://Slorey ౨ৎ assets/sprites/vanessa/simple van idle.PNG" id="3_fv4ou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_00oix"]
 atlas = ExtResource("2_afxre")
@@ -39,13 +40,13 @@ region = Rect2(448, 704, 64, 64)
 atlas = ExtResource("2_afxre")
 region = Rect2(512, 704, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nw7vq"]
-atlas = ExtResource("2_afxre")
-region = Rect2(0, 1536, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_awbd1"]
+atlas = ExtResource("3_fv4ou")
+region = Rect2(0, 0, 48, 55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_quwy0"]
-atlas = ExtResource("2_afxre")
-region = Rect2(64, 1536, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7bh1"]
+atlas = ExtResource("3_fv4ou")
+region = Rect2(48, 0, 48, 55)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjriu"]
 atlas = ExtResource("2_afxre")
@@ -191,10 +192,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nw7vq")
+"texture": SubResource("AtlasTexture_awbd1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_quwy0")
+"texture": SubResource("AtlasTexture_c7bh1")
 }],
 "loop": true,
 "name": &"idle",
@@ -306,8 +307,8 @@ script = ExtResource("1_pgkfr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -25)
 sprite_frames = SubResource("SpriteFrames_wtep2")
-animation = &"n_walk"
-frame_progress = 0.117084
+animation = &"idle"
+frame_progress = 0.994142
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu4kto8erng0s"
+path="res://.godot/imported/ElevenLabs_2024-07-26T22_52_15_Fin_pre_s50_sb75_se0_b_m2.mp3-f0c667f78511769821de449d8cfa58d1.mp3str"
+
+[deps]
+
+source_file="res://Slorey ౨ৎ assets/sounds/dialouge/ElevenLabs_2024-07-26T22_52_15_Fin_pre_s50_sb75_se0_b_m2.mp3"
+dest_files=["res://.godot/imported/ElevenLabs_2024-07-26T22_52_15_Fin_pre_s50_sb75_se0_b_m2.mp3-f0c667f78511769821de449d8cfa58d1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

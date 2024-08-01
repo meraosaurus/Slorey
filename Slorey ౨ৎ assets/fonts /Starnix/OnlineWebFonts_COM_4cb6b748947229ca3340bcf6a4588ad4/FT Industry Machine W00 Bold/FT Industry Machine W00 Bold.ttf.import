@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bfipe4svhuvna"
+path="res://.godot/imported/FT Industry Machine W00 Bold.ttf-4495260cfa66c50f0f9782e09e964147.fontdata"
+
+[deps]
+
+source_file="res://Slorey ౨ৎ assets/fonts /Starnix/OnlineWebFonts_COM_4cb6b748947229ca3340bcf6a4588ad4/FT Industry Machine W00 Bold/FT Industry Machine W00 Bold.ttf"
+dest_files=["res://.godot/imported/FT Industry Machine W00 Bold.ttf-4495260cfa66c50f0f9782e09e964147.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

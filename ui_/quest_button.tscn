@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://42okx43h10k3"]
+
+[ext_resource type="Script" path="res://ui_/quest_button.gd" id="1_eyvvn"]
+[ext_resource type="Texture2D" uid="uid://ceb51nbq7wmh7" path="res://Slorey ౨ৎ assets/UI/home screen ui/quest icon.PNG" id="1_ie0dw"]
+
+[node name="Quest_button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eyvvn")
+
+[node name="questButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 1274.0
+offset_right = 3404.0
+offset_bottom = 3832.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("1_ie0dw")

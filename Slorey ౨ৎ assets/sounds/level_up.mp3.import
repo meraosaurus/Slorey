@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k5htn58iu0ku"
+path="res://.godot/imported/level_up.mp3-f85ad73b11e888e66c8db705be109d44.mp3str"
+
+[deps]
+
+source_file="res://Slorey ౨ৎ assets/sounds/level_up.mp3"
+dest_files=["res://.godot/imported/level_up.mp3-f85ad73b11e888e66c8db705be109d44.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
