@@ -12,7 +12,7 @@ func _ready():
 		$Timer.start()
 
 
-func _process(delta):
+func _process(_delta):
 	if state == "no meg":
 		$AnimatedSprite2D.play("no meg")
 	if state == "meg":

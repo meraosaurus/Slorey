@@ -10,7 +10,7 @@ func _ready():
 	if state == "no cocoa":
 		$Timer.start()
 
-func _process(delta):
+func _process(_delta):
 	if state == "no cocoa":
 		$AnimatedSprite2D.play("no cocoa")
 	if state == "cocoa":

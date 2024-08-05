@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3nevrfs0r23p"
+path="res://.godot/imported/daytime pt 2.mp3-b6e2add102fe515137c341a44465ec54.mp3str"
+
+[deps]
+
+source_file="res://Slorey ౨ৎ assets/music/daytime pt 2.mp3"
+dest_files=["res://.godot/imported/daytime pt 2.mp3-b6e2add102fe515137c341a44465ec54.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -20,6 +20,16 @@ window/size/viewport_width=1814
 window/size/viewport_height=1269
 window/size/mode=2
 
+[file_customization]
+
+folder_colors={
+"res://Assets/landscape items homemade/": "blue"
+}
+
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 left={
