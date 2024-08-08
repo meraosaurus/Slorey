@@ -14,6 +14,10 @@ config/name="Slorey౨ৎ"
 run/main_scene="res://Levels/Level_1/grand etang alt.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/viewport_width=1814
