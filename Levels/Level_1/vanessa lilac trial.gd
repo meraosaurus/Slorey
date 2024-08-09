@@ -17,6 +17,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	play_anim(direction)
+	current_camera()
 
 func play_anim(direction):
 	if player_state == "idle":
@@ -36,3 +37,12 @@ func player():
 
 func collect(item):
 	inv.insert(item)
+
+
+func current_camera():
+	if global.current_scene == "grand etang":
+		$grandetang.enabled = true
+		$village.enabled = false
+	elif global.current_scene == "village":
+		$village.enabled = true
+		$grandetang.enabled = false

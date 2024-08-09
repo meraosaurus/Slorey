@@ -314,9 +314,13 @@ frame_progress = 0.994142
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_ul2k8")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="grandetang" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 limit_left = -1131
 limit_top = -713
 limit_right = 2193
 limit_bottom = 3071
+
+[node name="village" type="Camera2D" parent="."]
+position = Vector2(677, -4873)
+zoom = Vector2(2.5, 2.5)
