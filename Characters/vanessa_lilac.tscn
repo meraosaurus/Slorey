@@ -322,5 +322,5 @@ limit_right = 2193
 limit_bottom = 3071
 
 [node name="village" type="Camera2D" parent="."]
-position = Vector2(677, -4873)
+position = Vector2(-3, 233)
 zoom = Vector2(2.5, 2.5)
