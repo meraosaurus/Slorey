@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bs3jf56muxxqc"]
+[gd_scene load_steps=55 format=3 uid="uid://bs3jf56muxxqc"]
 
 [ext_resource type="Texture2D" uid="uid://yu4itj3alf0v" path="res://Assets/landscape items homemade/new grass shade19.PNG" id="1_7t3vd"]
 [ext_resource type="Script" path="res://Levels/Level_1/village.gd" id="1_kjuk6"]
@@ -25,6 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://ckg2a3ubghd2q" path="res://Slorey ౨ৎ assets/tilesets/village/jhouse.PNG" id="16_3al3v"]
 [ext_resource type="PackedScene" uid="uid://csh3omiqlvex" path="res://Characters/vanessa_lilac.tscn" id="19_y0jqc"]
 [ext_resource type="PackedScene" uid="uid://dhvvp2nddrqjx" path="res://tree scripts/mango_tree.tscn" id="24_br117"]
+[ext_resource type="PackedScene" uid="uid://d0unm051l8nvk" path="res://inventory/inventory_ui.tscn" id="26_va6v5"]
+[ext_resource type="PackedScene" uid="uid://gn04uyvtb717" path="res://ui_/inventorybutton.tscn" id="27_ve4dl"]
+[ext_resource type="PackedScene" uid="uid://dcofalsshvf8m" path="res://ui_/characterstats.tscn" id="28_xv7ht"]
+[ext_resource type="PackedScene" uid="uid://42okx43h10k3" path="res://ui_/quest_button.tscn" id="29_rohww"]
+[ext_resource type="PackedScene" uid="uid://ce3us76s8ua0t" path="res://ui_/settings_button.tscn" id="30_8u45j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1kw0"]
 texture = ExtResource("1_7t3vd")
@@ -20107,6 +20112,7 @@ layer_13/tile_data = PackedInt32Array()
 
 [node name="vanessa lilac" parent="." instance=ExtResource("19_y0jqc")]
 position = Vector2(110, -1018)
+collision_layer = 0
 
 [node name="village_exit_point" type="Area2D" parent="."]
 position = Vector2(-2925, -1167)
@@ -20115,12 +20121,53 @@ position = Vector2(-2925, -1167)
 position = Vector2(3015, 43)
 shape = SubResource("RectangleShape2D_kt7uc")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-4482, -1196)
-polygon = PackedVector2Array(1544, 804, 1411, 4734, 1116, 5093, 1637, 5379, 7887, 5265, 7920, 4776, 7999, -462, 4835, -374, 4222, -353, 1427, -21, 1528, 765, 1547, 823, 1548, 622, 1547, 462, 1548, 28, 4175, 108, 4175, 25, 4564, 28, 4962, 25, 4972, 25, 4971, 110, 6766, 30, 7459, 35, 7467, 4189, 7464, 4764, 1678, 4756, 1557, 4757, 1549, 3895, 1552, 3747, 1550, 3577, 1549, 3428, 1548, 3229, 1549, 3065, 1549, 2905, 1548, 2722, 1551, 2584, 1550, 2478, 1547, 2352, 1547, 2143, 1548, 2004, 1548, 1767, 1547, 1601, 1547, 1575, 1548, 1521, 1548, 1333, 1547, 1021, 1548, 845)
-
 [node name="mango tree" parent="." instance=ExtResource("24_br117")]
 position = Vector2(-1364, 839)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2928, 3571)
+
+[node name="collisions" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(-4471, -1195)
+polygon = PackedVector2Array(1541, 813, 1411, 4734, 1116, 5093, 1637, 5379, 7887, 5265, 7920, 4776, 7999, -462, 4835, -374, 4222, -353, 1427, -21, 1528, 765, 1556, 925, 1555, 619, 1554, 464, 1556, 29, 4175, 108, 4175, 25, 4564, 28, 4962, 25, 4972, 25, 4971, 110, 6766, 30, 7459, 35, 7467, 4189, 7464, 4764, 1678, 4756, 1557, 4757, 1549, 3895, 1552, 3747, 1550, 3577, 1549, 3428, 1555, 3231, 1563, 3062, 1549, 2905, 1548, 2722, 1551, 2584, 1550, 2478, 1547, 2352, 1547, 2143, 1548, 2004, 1548, 1767, 1547, 1601, 1547, 1575, 1548, 1521, 1548, 1333, 1558, 1024, 1548, 844)
+
+[node name="inventory" type="CanvasLayer" parent="."]
+follow_viewport_scale = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="inventory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="inventory ui" parent="inventory" instance=ExtResource("26_va6v5")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -476.5
+offset_top = -329.5
+offset_right = 476.5
+offset_bottom = 329.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bag button" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="bag button" instance=ExtResource("27_ve4dl")]
+
+[node name="stats" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="stats" instance=ExtResource("28_xv7ht")]
+
+[node name="quests" type="CanvasLayer" parent="."]
+
+[node name="Quest_button" parent="quests" instance=ExtResource("29_rohww")]
+
+[node name="settings" type="CanvasLayer" parent="."]
+
+[node name="settings_button" parent="settings" instance=ExtResource("30_8u45j")]
 
 [connection signal="body_entered" from="village_exit_point" to="." method="_on_village_exit_point_body_entered"]
 [connection signal="body_exited" from="village_exit_point" to="." method="_on_village_exit_point_body_exited"]

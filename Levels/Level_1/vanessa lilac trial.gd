@@ -3,6 +3,9 @@ var speed= 100
 
 var player_state
 
+var village = "res://Levels/Level_1/village.tscn"
+var grandetang = "res://Levels/Level_1/grand etang alt.tscn"
+
 @export var inv:Inv
 
 func _physics_process(_delta):
@@ -40,9 +43,9 @@ func collect(item):
 
 
 func current_camera():
-	if global.current_scene == "grand etang":
-		$grandetang.enabled = true
-		$village.enabled = false
-	elif global.current_scene == "village":
-		$village.enabled = true
-		$grandetang.enabled = false
+	if global.current_scene == grandetang:
+		$grandetangcam.enabled= true
+	elif global.current_scene == village:
+		$grandetangcam.enabled=false
+		$villagecam.enabled= true
+		$grandetangcam.enabled=false
