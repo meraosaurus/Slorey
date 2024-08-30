@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8tytmtxvxs1r"]
+
+[ext_resource type="Script" path="res://ui_/hotbar slot.gd" id="1_u4oxj"]
+[ext_resource type="Texture2D" uid="uid://d8sktkw3n043" path="res://Slorey ౨ৎ assets/UI/inventory/curved inventory slot.PNG" id="2_kppc4"]
+
+[node name="hotbar slot" type="Button"]
+offset_right = 32.0
+offset_bottom = 30.0
+flat = true
+script = ExtResource("1_u4oxj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 15.5)
+scale = Vector2(1, 0.96875)
+texture = ExtResource("2_kppc4")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+use_top_left = true
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2

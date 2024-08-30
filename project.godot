@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "Mobile")
 [autoload]
 
 global="*res://global.gd"
+AudioPlayer="*res://audio/audio_player.tscn"
 
 [display]
 

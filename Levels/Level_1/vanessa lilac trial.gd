@@ -28,12 +28,23 @@ func play_anim(direction):
 	elif player_state == "walking":
 		if direction.x == 1:
 			$AnimatedSprite2D.play("e_walk")
+			soundeffect()
 		if direction.y == 1:
 			$AnimatedSprite2D.play("s_walk")
+			soundeffect()
 		if direction.x == -1:
 			$AnimatedSprite2D.play("w_walk")
+			soundeffect()
 		if direction.y == -1:
 			$AnimatedSprite2D.play("n_walk")
+			soundeffect()
+
+func soundeffect():
+	if player_state=="walking":
+		$AudioStreamPlayer.play()
+	elif player_state!="walking" or player_state=="idle":
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer.seek(-1)
 
 func player():
 	pass

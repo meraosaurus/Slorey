@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bs3jf56muxxqc"]
+[gd_scene load_steps=56 format=3 uid="uid://bs3jf56muxxqc"]
 
 [ext_resource type="Texture2D" uid="uid://yu4itj3alf0v" path="res://Assets/landscape items homemade/new grass shade19.PNG" id="1_7t3vd"]
 [ext_resource type="Script" path="res://Levels/Level_1/village.gd" id="1_kjuk6"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dcofalsshvf8m" path="res://ui_/characterstats.tscn" id="28_xv7ht"]
 [ext_resource type="PackedScene" uid="uid://42okx43h10k3" path="res://ui_/quest_button.tscn" id="29_rohww"]
 [ext_resource type="PackedScene" uid="uid://ce3us76s8ua0t" path="res://ui_/settings_button.tscn" id="30_8u45j"]
+[ext_resource type="PackedScene" uid="uid://c3mwg11aka0my" path="res://ui_/hotbar.tscn" id="31_3uryb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1kw0"]
 texture = ExtResource("1_7t3vd")
@@ -20072,8 +20073,8 @@ sources/19 = SubResource("TileSetAtlasSource_wuji5")
 sources/20 = SubResource("TileSetAtlasSource_2xi5p")
 sources/21 = SubResource("TileSetAtlasSource_voqmn")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_imgbg"]
-size = Vector2(173, 44)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5v7q"]
+size = Vector2(135.75, 51)
 
 [node name="Village" type="Node2D"]
 script = ExtResource("1_kjuk6")
@@ -20128,8 +20129,8 @@ position = Vector2(-1364, 839)
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
-position = Vector2(-4471, -1195)
-polygon = PackedVector2Array(1541, 813, 1411, 4734, 1116, 5093, 1637, 5379, 7887, 5265, 7920, 4776, 7999, -462, 4835, -374, 4222, -353, 1427, -21, 1528, 765, 1556, 925, 1555, 619, 1554, 464, 1556, 29, 3860, 164, 3978, 137, 4096, 218, 4068, 111, 4353, 190, 4480, 26, 4478, -11, 4653, -10, 4643, 23, 4852, 146, 4925, 175, 4981, 249, 5055, 108, 6766, 30, 7459, 35, 7467, 4189, 7464, 4764, 1678, 4756, 1557, 4757, 1549, 3895, 1552, 3747, 1550, 3577, 1549, 3428, 1555, 3231, 1563, 3062, 1549, 2905, 1548, 2722, 1551, 2584, 1550, 2478, 1547, 2352, 1547, 2143, 1548, 2004, 1548, 1767, 1547, 1601, 1547, 1575, 1548, 1521, 1548, 1333, 1558, 1024, 1548, 844)
+position = Vector2(-4466, -1208)
+polygon = PackedVector2Array(1541, 813, 1411, 4734, 1116, 5093, 1637, 5379, 7887, 5265, 7920, 4776, 7999, -462, 4835, -374, 4222, -353, 1427, -21, 1528, 765, 1556, 925, 1555, 619, 1554, 464, 1556, 29, 3860, 164, 3978, 137, 4096, 218, 4068, 111, 4353, 190, 4492, 39, 4492, -11, 4624, -8, 4627, 40, 4852, 146, 4925, 175, 4981, 249, 5055, 108, 6766, 30, 7459, 35, 7458, 2781, 7458, 3269, 7457, 3500, 7456, 3749, 7453, 3909, 7458, 4112, 7458, 4188, 7457, 4267, 7457, 4484, 7458, 4637, 7458, 4766, 1678, 4756, 1557, 4757, 1549, 3895, 1552, 3747, 1550, 3577, 1549, 3428, 1555, 3231, 1563, 3062, 1549, 2905, 1548, 2722, 1551, 2584, 1550, 2478, 1547, 2352, 1547, 2143, 1548, 2004, 1548, 1767, 1547, 1601, 1547, 1575, 1548, 1521, 1548, 1333, 1558, 1024, 1548, 844)
 
 [node name="inventory" type="CanvasLayer" parent="."]
 follow_viewport_scale = 0.5
@@ -20168,13 +20169,29 @@ grow_vertical = 2
 [node name="settings_button" parent="settings" instance=ExtResource("30_8u45j")]
 
 [node name="village_exit_point" type="Area2D" parent="."]
-position = Vector2(126, -1169)
+position = Vector2(123, -1175)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="village_exit_point"]
-position = Vector2(-33.5, -21)
-shape = SubResource("RectangleShape2D_imgbg")
+position = Vector2(-29.125, -18.5)
+shape = SubResource("RectangleShape2D_f5v7q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, -1415)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("31_3uryb")]
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.097
+anchor_right = 1.0
+anchor_bottom = 0.975
+offset_left = 1124.35
+offset_top = 1227.91
+offset_right = -517.0
+offset_bottom = 145.725
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
 
 [connection signal="body_entered" from="village_exit_point" to="." method="_on_village_exit_point_body_entered"]

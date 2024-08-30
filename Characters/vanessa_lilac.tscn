@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://csh3omiqlvex"]
+[gd_scene load_steps=42 format=3 uid="uid://csh3omiqlvex"]
 
 [ext_resource type="Script" path="res://Levels/Level_1/vanessa lilac trial.gd" id="1_pgkfr"]
 [ext_resource type="Texture2D" uid="uid://cutvb4l8x3oi7" path="res://Characters/Download47745.png" id="2_afxre"]
 [ext_resource type="Texture2D" uid="uid://8jy8ok1o504" path="res://Slorey ౨ৎ assets/sprites/vanessa/van idle.PNG" id="3_sog6n"]
 [ext_resource type="Texture2D" uid="uid://qh4pmhumbt2k" path="res://Slorey ౨ৎ assets/sprites/vanessa/vanessa back.PNG" id="4_df1ku"]
 [ext_resource type="Texture2D" uid="uid://8311rwe17b6k" path="res://Slorey ౨ৎ assets/sprites/vanessa/vanessa foward walk.PNG" id="5_lf323"]
+[ext_resource type="AudioStream" uid="uid://430u22eawffw" path="res://Slorey ౨ৎ assets/sounds/short jwalking.MP3" id="6_obf6p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_00oix"]
 atlas = ExtResource("2_afxre")
@@ -298,3 +299,6 @@ limit_left = -1131
 limit_top = -713
 limit_right = 2193
 limit_bottom = 3071
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_obf6p")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://430u22eawffw"
+path="res://.godot/imported/short jwalking.MP3-8b737decee4ccd0bfd3ba86af46dc8ef.mp3str"
+
+[deps]
+
+source_file="res://Slorey ౨ৎ assets/sounds/short jwalking.MP3"
+dest_files=["res://.godot/imported/short jwalking.MP3-8b737decee4ccd0bfd3ba86af46dc8ef.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=3.0
+bpm=0.0
+beat_count=0
+bar_beats=4
