@@ -20072,8 +20072,8 @@ sources/19 = SubResource("TileSetAtlasSource_wuji5")
 sources/20 = SubResource("TileSetAtlasSource_2xi5p")
 sources/21 = SubResource("TileSetAtlasSource_voqmn")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt7uc"]
-size = Vector2(792, 87)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imgbg"]
+size = Vector2(173, 44)
 
 [node name="Village" type="Node2D"]
 script = ExtResource("1_kjuk6")
@@ -20111,27 +20111,25 @@ layer_13/name = "water"
 layer_13/tile_data = PackedInt32Array()
 
 [node name="vanessa lilac" parent="." instance=ExtResource("19_y0jqc")]
-position = Vector2(110, -1018)
+position = Vector2(114, -995)
 collision_layer = 0
 
-[node name="village_exit_point" type="Area2D" parent="."]
-position = Vector2(-2925, -1167)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="village_exit_point"]
-position = Vector2(3015, 43)
-shape = SubResource("RectangleShape2D_kt7uc")
+[node name="Camera2D" type="Camera2D" parent="vanessa lilac"]
+position = Vector2(1, 104)
+zoom = Vector2(2.5, 2.5)
+limit_left = -2881
+limit_top = -1225
+limit_right = 2864
+limit_bottom = 3436
 
 [node name="mango tree" parent="." instance=ExtResource("24_br117")]
 position = Vector2(-1364, 839)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2928, 3571)
-
-[node name="collisions" type="Area2D" parent="."]
+[node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
 position = Vector2(-4471, -1195)
-polygon = PackedVector2Array(1541, 813, 1411, 4734, 1116, 5093, 1637, 5379, 7887, 5265, 7920, 4776, 7999, -462, 4835, -374, 4222, -353, 1427, -21, 1528, 765, 1556, 925, 1555, 619, 1554, 464, 1556, 29, 4175, 108, 4175, 25, 4564, 28, 4962, 25, 4972, 25, 4971, 110, 6766, 30, 7459, 35, 7467, 4189, 7464, 4764, 1678, 4756, 1557, 4757, 1549, 3895, 1552, 3747, 1550, 3577, 1549, 3428, 1555, 3231, 1563, 3062, 1549, 2905, 1548, 2722, 1551, 2584, 1550, 2478, 1547, 2352, 1547, 2143, 1548, 2004, 1548, 1767, 1547, 1601, 1547, 1575, 1548, 1521, 1548, 1333, 1558, 1024, 1548, 844)
+polygon = PackedVector2Array(1541, 813, 1411, 4734, 1116, 5093, 1637, 5379, 7887, 5265, 7920, 4776, 7999, -462, 4835, -374, 4222, -353, 1427, -21, 1528, 765, 1556, 925, 1555, 619, 1554, 464, 1556, 29, 3860, 164, 3978, 137, 4096, 218, 4068, 111, 4353, 190, 4480, 26, 4478, -11, 4653, -10, 4643, 23, 4852, 146, 4925, 175, 4981, 249, 5055, 108, 6766, 30, 7459, 35, 7467, 4189, 7464, 4764, 1678, 4756, 1557, 4757, 1549, 3895, 1552, 3747, 1550, 3577, 1549, 3428, 1555, 3231, 1563, 3062, 1549, 2905, 1548, 2722, 1551, 2584, 1550, 2478, 1547, 2352, 1547, 2143, 1548, 2004, 1548, 1767, 1547, 1601, 1547, 1575, 1548, 1521, 1548, 1333, 1558, 1024, 1548, 844)
 
 [node name="inventory" type="CanvasLayer" parent="."]
 follow_viewport_scale = 0.5
@@ -20169,5 +20167,14 @@ grow_vertical = 2
 
 [node name="settings_button" parent="settings" instance=ExtResource("30_8u45j")]
 
+[node name="village_exit_point" type="Area2D" parent="."]
+position = Vector2(126, -1169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="village_exit_point"]
+position = Vector2(-33.5, -21)
+shape = SubResource("RectangleShape2D_imgbg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(96, -1415)
+
 [connection signal="body_entered" from="village_exit_point" to="." method="_on_village_exit_point_body_entered"]
-[connection signal="body_exited" from="village_exit_point" to="." method="_on_village_exit_point_body_exited"]

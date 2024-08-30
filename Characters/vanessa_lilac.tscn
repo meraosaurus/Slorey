@@ -281,16 +281,20 @@ frame_progress = 0.10553
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_ul2k8")
 
+[node name="villagecam" type="Camera2D" parent="."]
+position = Vector2(-3, 233)
+enabled = false
+zoom = Vector2(2.5, 2.5)
+limit_left = -2881
+limit_top = -1225
+limit_right = 2864
+limit_bottom = 3436
+
 [node name="grandetangcam" type="Camera2D" parent="."]
+visible = false
+enabled = false
 zoom = Vector2(2.5, 2.5)
 limit_left = -1131
 limit_top = -713
 limit_right = 2193
 limit_bottom = 3071
-
-[node name="villagecam" type="Camera2D" parent="."]
-position = Vector2(-3, 233)
-zoom = Vector2(2.5, 2.5)
-limit_left = -2928
-limit_top = -1167
-limit_right = 2928

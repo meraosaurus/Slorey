@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var speed= 100
+var speed= 175
 
 var player_state
 
@@ -20,7 +20,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	play_anim(direction)
-	current_camera()
+	#current_camera()
 
 func play_anim(direction):
 	if player_state == "idle":
@@ -42,10 +42,11 @@ func collect(item):
 	inv.insert(item)
 
 
-func current_camera():
-	if global.current_scene == grandetang:
-		$grandetangcam.enabled= true
-	elif global.current_scene == village:
-		$grandetangcam.enabled=false
-		$villagecam.enabled= true
-		$grandetangcam.enabled=false
+#func current_camera():
+#	if global.current_scene == grandetang:
+#		$villagecam.enabled=false
+#		$grandetangcam.enabled= true
+#	elif global.current_scene == village:
+#		$grandetangcam.enabled=false
+#		$villagecam.enabled= true
+#		$grandetangcam.enabled=false

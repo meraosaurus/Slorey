@@ -5,9 +5,5 @@ var grandetang = "res://Levels/Level_1/grand etang alt.tscn"
 
 
 func _on_village_exit_point_body_entered(body):
-	if body.has_method("player") and get_tree().current_scene:
-		get_tree().change_scene_to_file(grandetang)
-
-func _on_village_exit_point_body_exited(body):
-	if body.has_method("player") and get_tree().current_scene:
-		get_tree().change_scene_to_file(village)
+	if body.has_method("player")and get_tree().current_scene:
+		get_tree().change_scene_to_file.bind("res://Levels/Level_1/grand etang alt.gd").call_deferred()
