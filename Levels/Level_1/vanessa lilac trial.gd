@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name van extends CharacterBody2D
 var speed= 175
 
 var player_state
@@ -7,6 +7,7 @@ var village = "res://Levels/Level_1/village.tscn"
 var grandetang = "res://Levels/Level_1/grand etang alt.tscn"
 
 @export var inv:Inv
+@onready var AnimatedSprite_2D: AnimatedSprite2D=$AnimatedSprite2D
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "top", "down")
@@ -52,6 +53,15 @@ func player():
 func collect(item):
 	inv.insert(item)
 
+
+func _ready():
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+	
+
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	AnimatedSprite_2D.play("walking"+direction)
+	AnimatedSprite_2D.stop()
 
 #func current_camera():
 #	if global.current_scene == grandetang:
