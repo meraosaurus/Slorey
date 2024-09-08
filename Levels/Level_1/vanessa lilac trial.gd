@@ -40,7 +40,7 @@ func play_anim(direction):
 			$AnimatedSprite2D.play("n_walk")
 			soundeffect()
 
-func soundeffect():
+func soundeffect(): #walking sound effects by me 
 	if player_state=="walking":
 		$AudioStreamPlayer.play()
 	elif player_state!="walking" or player_state=="idle":

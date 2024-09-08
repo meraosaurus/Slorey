@@ -238,7 +238,7 @@ script = ExtResource("1_pgkfr")
 position = Vector2(0, -25)
 sprite_frames = SubResource("SpriteFrames_wtep2")
 animation = &"w_walk"
-frame_progress = 0.552892
+frame_progress = 0.00152767
 offset = Vector2(-12, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

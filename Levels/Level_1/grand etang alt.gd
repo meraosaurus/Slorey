@@ -1,7 +1,8 @@
 extends Node2D
 
-var village = "res://Levels/Level_1/village.tscn"
-var grandetang = "res://Levels/Level_1/grand etang alt.tscn"
+
+var location2 = "res://Levels/Level_1/grand etang alt.tscn"
+var location1= "res://scenes/grandetangcabin.tscn"
 
 func _ready():
 	AudioPlayer.play_music_level()
@@ -11,5 +12,13 @@ func _ready():
 func _on_level_spawn(destination_tag:String):
 	var door_path ="Doors/door_" + destination_tag
 	var Door = get_node(door_path) as door
-	NavigationManager.trigger_player_spawn(Door.spawn.global_position, Door.spawn.global_direction)
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_method("player") and get_tree().current_scene:
+		get_tree().change_scene_to_file(location1)
+
+func _on_area_2d_body_exited(body):
+	if body.has_method("player") and get_tree().current_scene:
+		get_tree().change_scene_to_file(location2)
 
