@@ -20,6 +20,7 @@ global="*res://global.gd"
 AudioPlayer="*res://audio/audio_player.tscn"
 Scene_manager="*res://scenes/scenemanager.gd"
 NavigationManager="*res://scenes/navigation_manager.gd"
+inventory="*res://inventory/inventory_ui.tscn"
 
 [display]
 
