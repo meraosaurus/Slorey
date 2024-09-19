@@ -63,11 +63,4 @@ func _on_spawn(position: Vector2, direction: String):
 	AnimatedSprite_2D.play("walking"+direction)
 	AnimatedSprite_2D.stop()
 
-#func current_camera():
-#	if global.current_scene == grandetang:
-#		$villagecam.enabled=false
-#		$grandetangcam.enabled= true
-#	elif global.current_scene == village:
-#		$grandetangcam.enabled=false
-#		$villagecam.enabled= true
-#		$grandetangcam.enabled=false
+
