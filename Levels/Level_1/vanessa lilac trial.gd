@@ -1,9 +1,7 @@
-class_name van extends CharacterBody2D 
+class_name van extends CharacterBody2D
 var speed= 175
 
 var player_state
-var player_pos:Vector2
-var health=100
 
 var village = "res://Levels/Level_1/village.tscn"
 var grandetang = "res://Levels/Level_1/grand etang alt.tscn"
@@ -23,14 +21,11 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	play_anim(direction)
-	if player_pos!=global_position && player_state=="idle":
-		print(global_position)
-		player_pos=global_position
+	#current_camera()
 
 func play_anim(direction):
 	if player_state == "idle":
 		$AnimatedSprite2D.play("idle")
-		
 	elif player_state == "walking":
 		if direction.x == 1:
 			$AnimatedSprite2D.play("e_walk")
@@ -40,7 +35,6 @@ func play_anim(direction):
 			soundeffect()
 		if direction.x == -1:
 			$AnimatedSprite2D.play("w_walk")
-			print(position)
 			soundeffect()
 		if direction.y == -1:
 			$AnimatedSprite2D.play("n_walk")
@@ -62,9 +56,7 @@ func collect(item):
 
 func _ready():
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
-	player_pos = global_position
-
-
+	
 
 func _on_spawn(position: Vector2, direction: String):
 	global_position = position
