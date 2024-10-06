@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bs3jf56muxxqc"]
+[gd_scene load_steps=60 format=3 uid="uid://bs3jf56muxxqc"]
 
 [ext_resource type="Script" path="res://Levels/Level_1/village.gd" id="1_8hjcc"]
 [ext_resource type="Texture2D" uid="uid://yu4itj3alf0v" path="res://Assets/landscape items homemade/new grass shade19.PNG" id="2_48e0f"]
@@ -34,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://c3mwg11aka0my" path="res://ui_/hotbar.tscn" id="30_gjf2g"]
 [ext_resource type="PackedScene" uid="uid://c28oh0w2ftb6u" path="res://scenes/transitions.tscn" id="31_mvxa4"]
 [ext_resource type="PackedScene" uid="uid://csh3omiqlvex" path="res://Characters/vanessa_lilac.tscn" id="32_it4g8"]
-[ext_resource type="PackedScene" uid="uid://caqh6n8uldxt3" path="res://Characters/cat.tscn" id="35_p67un"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1kw0"]
 texture = ExtResource("2_48e0f")
@@ -21547,12 +21546,6 @@ sources/21 = SubResource("TileSetAtlasSource_voqmn")
 sources/22 = SubResource("TileSetAtlasSource_4uuk4")
 sources/23 = SubResource("TileSetAtlasSource_31nbq")
 
-[sub_resource type="Curve2D" id="Curve2D_avp6w"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -846, 237, 0, 0, 0, 0, -1027, 235, 0, 0, 0, 0, -1109, 250, 0, 0, 0, 0, -1218, 265, 0, 0, 0, 0, -1294, 378, 0, 0, 0, 0, -1294, 501, 0, 0, 0, 0, -1417, 582, 0, 0, 0, 0, -1586, 541, 0, 0, 0, 0, -1653, 467, 0, 0, 0, 0, -1779, 462, 0, 0, 0, 0, -1853, 584, 0, 0, 0, 0, -1756, 611, 0, 0, 0, 0, -1501, 612, 0, 0, 0, 0, -1370, 649, 0, 0, 0, 0, -1241, 692, 0, 0, 0, 0, -1073, 754, 0, 0, 0, 0, -1000, 756, 0, 0, 0, 0, -952, 705, 0, 0, 0, 0, -905, 656, 0, 0, 0, 0, -830, 523, 0, 0, 0, 0, -769, 376, 0, 0, 0, 0, -732, 278, 0, 0, 0, 0, -732, 188, 0, 0, 0, 0, -726, 224, 0, 0, 0, 0, -751, 145)
-}
-point_count = 25
-
 [node name="Village" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_8hjcc")
@@ -21687,17 +21680,5 @@ spawn_direction = "left"
 
 [node name="Spawn" parent="Door/door_grand etang" index="1"]
 position = Vector2(8, 117)
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_avp6w")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-1277.37, 353.272)
-rotation = 2.16287
-progress = 480.77
-
-[node name="Cat" parent="Path2D/PathFollow2D" instance=ExtResource("35_p67un")]
-position = Vector2(-1732.32, 532.177)
-rotation = 3.10193
 
 [editable path="Door/door_grand etang"]
