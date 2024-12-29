@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cwrfb346flb0e"]
+[gd_scene load_steps=44 format=3 uid="uid://cwrfb346flb0e"]
 
 [ext_resource type="Texture2D" uid="uid://cgpih84vogxcd" path="res://Slorey ౨ৎ assets/tilesets/interiors/TopDownHouse_FloorsAndWalls.png" id="1_7xm3r"]
 [ext_resource type="Script" path="res://scenes/grandetangcabin.gd" id="1_17cgq"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://42okx43h10k3" path="res://ui_/quest_button.tscn" id="21_7enxv"]
 [ext_resource type="PackedScene" uid="uid://ce3us76s8ua0t" path="res://ui_/settings_button.tscn" id="22_quyfo"]
 [ext_resource type="PackedScene" uid="uid://c3mwg11aka0my" path="res://ui_/hotbar.tscn" id="23_7rdue"]
+[ext_resource type="Script" path="res://scenes/save_load.gd" id="23_sji2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6ybl"]
 texture = ExtResource("1_7xm3r")
@@ -3432,7 +3433,7 @@ sources/15 = SubResource("TileSetAtlasSource_4wmwc")
 sources/16 = SubResource("TileSetAtlasSource_2opg3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7n61"]
-size = Vector2(48, 8.5)
+size = Vector2(46, 15.25)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_17cgq")
@@ -3441,7 +3442,8 @@ script = ExtResource("1_17cgq")
 position = Vector2(330, 116)
 zoom = Vector2(5, 5)
 
-[node name="vanessa lilac" parent="." instance=ExtResource("8_3ldpo")]
+[node name="vanessalilac" parent="." instance=ExtResource("8_3ldpo")]
+unique_name_in_owner = true
 position = Vector2(374, 197)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3464,10 +3466,11 @@ layer_5/tile_data = PackedInt32Array(720911, 14, 1, 786447, 14, 2, 720912, 65550
 position = Vector2(381, 348)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-52, -130)
+position = Vector2(-53, -126.625)
 shape = SubResource("RectangleShape2D_d7n61")
 
 [node name="inventory" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_scale = 0.5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="inventory"]
@@ -3488,10 +3491,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bag button" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" parent="bag button" instance=ExtResource("19_0d6iv")]
 
 [node name="stats" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" parent="stats" instance=ExtResource("20_llfpv")]
 
@@ -3502,6 +3507,36 @@ grow_vertical = 2
 [node name="settings" type="CanvasLayer" parent="."]
 
 [node name="settings_button" parent="settings" instance=ExtResource("22_quyfo")]
+offset_left = 5.0
+offset_top = 13.0
+offset_right = 1819.0
+offset_bottom = 1282.0
+
+[node name="savenload" type="CanvasLayer" parent="."]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+follow_viewport_scale = 108.143
+
+[node name="HBoxContainer" type="HBoxContainer" parent="savenload"]
+layout_direction = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.185
+anchor_right = 0.095
+anchor_bottom = 0.287
+offset_right = -388.082
+offset_bottom = -267.215
+script = ExtResource("23_sji2f")
+
+[node name="button_load" type="Button" parent="savenload/HBoxContainer"]
+layout_mode = 2
+text = "load
+"
+
+[node name="Button_save" type="Button" parent="savenload/HBoxContainer"]
+layout_mode = 2
+text = "save
+"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -3521,3 +3556,5 @@ scale = Vector2(4, 4)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="button_up" from="savenload/HBoxContainer/button_load" to="savenload/HBoxContainer" method="_on_button_load_button_up"]
+[connection signal="button_up" from="savenload/HBoxContainer/Button_save" to="savenload/HBoxContainer" method="_on_button_save_button_up"]

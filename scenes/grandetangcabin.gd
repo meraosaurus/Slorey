@@ -11,4 +11,3 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.has_method("player") and get_tree().current_scene:
 		get_tree().change_scene_to_file(location1)
-		

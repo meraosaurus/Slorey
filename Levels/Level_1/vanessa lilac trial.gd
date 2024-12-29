@@ -1,13 +1,18 @@
-class_name van extends CharacterBody2D
+class_name van 
+extends CharacterBody2D
 var speed= 175
 
 var player_state
+var player_pos:Vector2
+
 
 var village = "res://Levels/Level_1/village.tscn"
 var grandetang = "res://Levels/Level_1/grand etang alt.tscn"
 
 @export var inv:Inv
 @onready var AnimatedSprite_2D: AnimatedSprite2D=$AnimatedSprite2D
+
+
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "top", "down")
@@ -21,7 +26,10 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	play_anim(direction)
-	#current_camera()
+	if player_pos!= global_position && player_state=="idle":
+		print(global_position) 
+		player_pos=global_position
+
 
 func play_anim(direction):
 	if player_state == "idle":
@@ -56,8 +64,9 @@ func collect(item):
 
 func _ready():
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
-	
+	player_pos= global_position 
 
+@warning_ignore("shadowed_variable_base_class")
 func _on_spawn(position: Vector2, direction: String):
 	global_position = position
 	AnimatedSprite_2D.play("walking"+direction)
